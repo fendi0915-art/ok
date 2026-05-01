@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta charset="UTF-8">
+<title>Fendi Violin Case</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600&family=Playfair+Display:wght@400;600&display=swap" rel="stylesheet">
+
+<style>
+  body{
+    margin:0;
+    background:#0b0b0b;
+    color:#eaeaea;
+    font-family:'Playfair Display', serif;
+    scroll-behavior:smooth;
+  }
+
+  nav{
+    position:fixed;
+    top:0;
+    width:100%;
+    display:flex;
+    justify-content:center;
+    gap:26px;
+    padding:14px;
+    background:rgba(11,11,11,0.75);
+    backdrop-filter: blur(10px);
+    font-size:12px;
+    letter-spacing:2px;
+    z-index:10;
+  }
+
+  nav a{
+    color:#d4af37;
+    text-decoration:none;
+  }
+
+  section{
+    height:100vh;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    padding:40px;
+  }
+
+  h1,h2{
+    font-family:'Cinzel', serif;
+    letter-spacing:3px;
+    margin:0;
+  }
+
+  h1{
+    font-size:60px;
+    color:#d4af37;
+  }
+
+  h2{
+    font-size:34px;
+    color:#d4af37;
+  }
+
+  p{
+    max-width:680px;
+    line-height:1.8;
+    color:#cfcfcf;
+  }
+
+  .tag{
+    color:#d4af37;
+    letter-spacing:2px;
+    font-size:13px;
+    margin-top:10px;
+  }
+
+  .image{
+    width:80%;
+    max-width:720px;
+    height:380px;
+    border:1px solid rgba(212,175,55,0.25);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    color:#777;
+    margin-top:30px;
+    transition:0.4s;
+  }
+
+  .image:hover{
+    border-color:#d4af37;
+    transform:scale(1.01);
+  }
+
+  .btn{
+    display:inline-block;
+    padding:14px 30px;
+    margin-top:20px;
+    border:1px solid #d4af37;
+    color:#d4af37;
+    text-decoration:none;
+    transition:0.4s;
+  }
+
+  .btn:hover{
+    background:#d4af37;
+    color:#0b0b0b;
+  }
+
+  .fade{
+    opacity:0;
+    transform:translateY(40px);
+    transition:1s ease;
+  }
+
+  .fade.show{
+    opacity:1;
+    transform:translateY(0);
+  }
+
+  /* subtle glow */
+  .glow{
+    text-shadow:0 0 18px rgba(212,175,55,0.2);
+  }
+</style>
+</head>
+
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="#home">HOME</a>
+  <a href="#story">STORY</a>
+  <a href="#craft">CRAFT</a>
+  <a href="#handmade">HANDMADE</a>
+  <a href="#order">ORDER</a>
+</nav>
+
+<!-- HERO -->
+<section id="home">
+  <div class="fade glow">
+    <h1>FENDI</h1>
+    <p class="tag">VIOLIN CASE · BLACK GOLD · PURE HANDMADE</p>
+    <p>Where craftsmanship becomes silence</p>
+  </div>
+</section>
+
+<!-- STORY -->
+<section id="story">
+  <div class="fade">
+    <h2>STORY</h2>
+    <p>
+      這不是工業產品，而是一件被時間塑造的物件。  
+      每一道痕跡，都來自手，而非機器。
+    </p>
+  </div>
+</section>
+
+<!-- CRAFT -->
+<section id="craft">
+  <div class="fade">
+    <h2>CRAFT</h2>
+    <p>
+      義大利牛皮手工裁切 × 金屬細節逐件拋光 × 非量產結構
+    </p>
+
+    <div class="image">
+      MATERIAL · HAND FINISH DETAIL
+    </div>
+  </div>
+</section>
+
+<!-- HANDMADE CORE -->
+<section id="handmade">
+  <div class="fade">
+    <h2>PURE HANDMADE</h2>
+    <p>
+      每一只琴盒皆由工匠逐件製作，非機械批量生產。  
+      皮革張力、縫線密度、結構校準皆依個體調整。
+    </p>
+
+    <p style="color:#d4af37; margin-top:20px;">
+      ⟡ No mass production<br>
+      ⟡ No identical pieces<br>
+      ⟡ Each case is unique
+    </p>
+  </div>
+</section>
+
+<!-- ORDER -->
+<section id="order">
+  <div class="fade">
+    <h2 class="glow">NT$ 38,000</h2>
+    <p>Handmade limited production · For professional musicians</p>
+
+    <a class="btn" href="https://line.me/ti/p/fendi-chang">
+      REQUEST ORDER
+    </a>
+
+    <p style="margin-top:20px; font-size:13px; color:#999;">
+      LINE: fendi-chang ｜ IG: ssuyuan_chang_fendi ｜ FB: 張絲媛
+    </p>
+  </div>
+</section>
+
+<script>
+  const items = document.querySelectorAll('.fade');
+
+  function show(){
+    const vh = window.innerHeight;
+
+    items.forEach(el=>{
+      const top = el.getBoundingClientRect().top;
+      if(top < vh - 80){
+        el.classList.add('show');
+      }
+    });
+  }
+
+  window.addEventListener('scroll', show);
+  window.addEventListener('load', show);
+</script>
+
+</body>
+</html>
